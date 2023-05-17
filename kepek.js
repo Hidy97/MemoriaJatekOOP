@@ -1,0 +1,22 @@
+export const kepekLista = [
+        {kep: "kep1.jpg"},
+        {kep: "kep10.jpg"},
+        {kep: "kep11.jpg"},
+        {kep: "kep12.jpg"},
+        {kep: "kep13.jpg"},
+        {kep: "kep14.jpg"},
+        {kep: "kep15.jpg"},
+        {kep: "kep16.jpg"},
+        {kep: "kep17.jpg"},
+        {kep: "kep18.jpg"},
+        {kep: "kep19.jpg"},
+        {kep: "kep2.jpg"},
+        {kep: "kep20.jpg"},
+        {kep: "kep3.jpg"},
+        {kep: "kep4.jpg"},
+        {kep: "kep5.jpg"},
+        {kep: "kep6.jpg"},
+        {kep: "kep7.jpg"},
+        {kep: "kep8.jpg"},
+        {kep: "kep9.jpg"}
+]
