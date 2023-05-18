@@ -1,31 +1,64 @@
 import Kartya from "./Kartya.js";
 
-class JatekTer{
-    #kartyaLista;
-    #kivalasztottKartyaLista;
+class JatekTer {
+    #kartyaLista = [];
+    #kivalasztottKartyaLista = [];
 
-    constructor(kartyaLista){
+    constructor(kartyaLista) {
         this.#kartyaLista = kartyaLista;
-        this.#kivalasztottKartyaLista;
+        //console.log(kartyaLista);
 
         const szuloElem = $("article");
 
         for (let index = 0; index < kartyaLista.length; index++) {
             const kartya = new Kartya(false, kartyaLista[index].kep, szuloElem)
-            
+
         }
 
-        $(window).on("fordít", (event) => {
+        $(window).on("fordit", (event) => {
+            //console.log(event.detail)
             this.#kivalasztottKartyaLista.push(event.detail);
-            //console.log(this.#kivalasztottKartyaLista);
+            console.log(this.#kivalasztottKartyaLista);
+            if (this.#kivalasztottKartyaLista.length == 2) {
+                this.ellenorzes();
+            }
         })
     }
 
-    init();
-    kever();
-    ellenorzes();
-    triggerBlocked();
-    triggerUnblocked();    
+    init() {
+
+    }
+
+    kever() {
+
+    }
+
+    ellenorzes() {
+        let elsoK = this.#kivalasztottKartyaLista[0];
+        let masodikK = this.#kivalasztottKartyaLista[1];
+        if (elsoK.getFajlnev() == masodikK.getFajlnev()) {
+            console.log("Fájlnév egyezik")
+        } else {
+            //this.#kartyaLista[i]
+            console.log("Fájlnév nem egyezik")
+            setTimeout(() => {
+                elsoK.setAllapot();
+                masodikK.setAllapot();
+            }, 1000);
+        }
+    }
+
+    triggerBlocked() {
+        const triggerBlocked = new CustomEvent("triggerBlocked", { detail: this });
+        window.dispatchEvent(triggerBlocked)
+        //console.log("katt");
+    }
+
+    triggerUnblocked() {
+        const triggerUnblocked = new CustomEvent("triggerUnblocked", { detail: this });
+        window.dispatchEvent(triggerUnblocked)
+        //console.log("katt");
+    }
 }
 
 export default JatekTer;

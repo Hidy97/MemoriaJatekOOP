@@ -1,4 +1,30 @@
 *{
     color: aqua;
     background-color: rgb(31, 30, 30);
+    margin: auto;
+}
+
+main{
+    width: 1000px;
+    max-width: 80%;
+}
+
+
+img{
+    width: 100%;
+    border: 1px dashed aqua;
+    padding: 2px;
+}
+
+h1{
+    margin: 10px;
+}
+
+article{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+}
+
+aside{
+    margin: auto;
 }
