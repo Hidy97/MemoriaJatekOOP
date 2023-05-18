@@ -36,6 +36,12 @@ class JatekTer {
     ellenorzes() {
         let elsoK = this.#kivalasztottKartyaLista[0];
         let masodikK = this.#kivalasztottKartyaLista[1];
+        /**
+        for (let index = 0; index < this.#kivalasztottKartyaLista.length; index++) {
+            const element = array[index];
+            
+        }
+         */
         if (elsoK.getFajlnev() == masodikK.getFajlnev()) {
             console.log("Fájlnév egyezik")
         } else {
